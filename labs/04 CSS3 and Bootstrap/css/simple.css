@@ -28,7 +28,7 @@ figcaption{
 p.copyright_notice {
     font-size: 0.8em;
 }
-div{
+dl{
     margin-left: 40px;
 }
 #special {
@@ -38,4 +38,12 @@ div{
     border-left: 2px solid black;
     margin-left: 40px;
     padding-left: 10px;
+}
+
+p::first-letter {
+    font-size:8em;
+}
+
+p::first-line {
+    font-weight: bold;
 }
