@@ -1,0 +1,41 @@
+body{
+    font-family: Arial, serif;
+    font-size: larger;
+}
+p{
+    font-size: 1.2em;
+}
+table, caption {
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+caption{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+th {
+    background: red;
+    color: white;
+    font-size: 1.2em;
+}
+th:first-of-type{
+    text-transform: uppercase;
+    border-right: 1px solid grey;
+}
+td:first-child {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: 1px solid grey;
+    border-collapse: collapse;
+    border-bottom: 0;
+    border-top: 0;
+}
+tr:nth-child(2n){
+    background-color: rgb(242,242,242);
+}
+th,td{
+    padding-left: 8px;
+    padding-right: 8px;
+}

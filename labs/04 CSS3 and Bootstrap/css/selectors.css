@@ -2,6 +2,10 @@ body {
     font-family: Arial, Verdana, sans-serif;
 }
 
+p:first-of-type, p.alert{
+text-decoration: underline;
+}
+
 p {
     color: blue;
 }
