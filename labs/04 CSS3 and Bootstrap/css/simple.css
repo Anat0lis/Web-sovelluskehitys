@@ -28,8 +28,12 @@ figcaption{
 p.copyright_notice {
     font-size: 0.8em;
 }
-dl{
-    margin-left: 40px;
+code{
+    font-family: Consolas, "courier new", serif;
+    color: crimson;
+    background-color: #f1f1f1;
+    padding: 2px;
+    font-size: 105%;
 }
 #special {
     font-size: 0.8em;

@@ -15,7 +15,7 @@ function process() {
     // Validate the email address:
     if (!email || !email.value 
     || (email.value.length < 6) 
-    || (email.value.indexOf('@') == -1)) {
+    || (email.value.indexOf('@') === -1)) {
         okay = false;
         alert('Please enter a valid email address!');
     }
@@ -23,7 +23,7 @@ function process() {
     // Validate the comments:
     var maxLength = 100;
     if (!comments || !comments.value 
-    || (comments.value.indexOf('<') != -1) ) {
+    || (comments.value.indexOf('<') !== -1) ) {
         okay = false;
         alert('Please enter your comments, without any HTML!');
     } else if (comments.value.length > maxLength) {
@@ -32,8 +32,7 @@ function process() {
         // Find the last space before the limit:
         var lastSpace = originalText.lastIndexOf(' ', maxLength);
         // Trim the text to that spot:
-        var limitedText = originalText.slice(0, lastSpace);
-        comments.value = limitedText;
+        comments.value = originalText.slice(0, lastSpace);
         okay = true;
 
         alert('Comment was trimmed under ' + maxLength + ' characters');

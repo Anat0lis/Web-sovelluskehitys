@@ -1,25 +1,24 @@
-
-var notes = new Array();
+'use strict'
+let notes = [];
 
 function addItem() {
-	textbox = document.getElementById('item');
-	var itemText = textbox.value;
+	let textbox = document.getElementById('item');
+	let itemText = textbox.value;
 	textbox.value = '';
 	textbox.focus();
-	var newItem = {title: itemText, quantity: 1};
+	let newItem = {title: itemText, quantity: 1};
 	notes.push(newItem);
 	displayList();
 }
 
 function displayList() {
-	var table = document.getElementById('list');
+	let table = document.getElementById('list');
 	table.innerHTML = '';
-	for (var i = 0; i<notes.length; i++) {
-		var node = undefined;
-		var note = notes[i];
-		var node = document.createElement('tr');
-		var html = '<td>'+note.title+'</td><td>'+note.quantity+'</td><td><a href="#" onClick="deleteIndex('+i+')">delete</td>';
-	    node.innerHTML = html;
+	for (let i = 0; i<notes.length; i++) {
+		let node = undefined;
+		let note = notes[i];
+		node = document.createElement('tr');
+		node.innerHTML = '<td>'+note.title+'</td><td>'+note.quantity+'</td><td><a href="#" onClick="deleteIndex('+i+')">delete</td>';
 		table.appendChild(node);
 	}
 }
@@ -29,5 +28,5 @@ function deleteIndex(i) {
 	displayList();
 }
 
-button = document.getElementById('add');
+let button = document.getElementById('add');
 button.onclick = addItem;
