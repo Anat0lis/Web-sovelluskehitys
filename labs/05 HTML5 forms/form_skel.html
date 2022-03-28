@@ -12,19 +12,20 @@
 		<h1>Turnitin</h1>
 		<form  lang="fi" action="">
 			<div>
-				Name: <input type="text" name="studentname"/>
+				<label>Name: <input type="text" name="studentname"/></label>
 			</div>
 			<div>
-				Student id: <input type="text" name="id"  />
+				<label>Student id:<input type="number" name="id" /> </label>
 			</div>
 			<div>
-				Email:
+				<label>Email: <input type="email" name="email"/></label>
 				<!--
 				Make an input named "email"
 				-->
 			</div>
 			<div>
-				Assignment:
+				<label>Assignment: <input type="text" name="assignment" /></label>
+
 				<!--
 				Make an input named "assignment"
 				-->
@@ -32,26 +33,40 @@
 			</div>
 
 			<div>
-				Code:
+				<label>Code:<textarea name="code">
+				</textarea></label>
+
 				<!--
 				Make an input named "code" which is a text area to put student's code into.
 				-->
-				
 			</div>
 			<div>
-				Cheat:
+				<label>Cheat: <input type="checkbox" name="cheat" /></label>
+
 			<!--
 				Make an input named "cheat" which is a check box the student must check.
 			-->
 			</div>
 			<div>
-				Pay:
+				<fieldset>
+					<legend>Payment method</legend>
+					<label><input type="radio" name="card" value="Visa">Visa</label><br>
+					<label><input type="radio" name="paypal" value="paypal"/>Paypal</label><br>
+					<label><input type="radio" name="card" value="MCard">MasterCard </label>
+				</fieldset>
 			<!--
 				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
 			-->
 			</div>
 			<div>
-				Score:
+				<label for="score">Score:</label>
+				<select name="score" id="score">
+					<option value="score1">1</option>
+					<option value="score2">2</option>
+					<option value="score3">3</option>
+					<option value="score4">4</option>
+					<option value="score5">5</option>
+				</select>
 			<!--
 				Make an input named "score" which is a list of choices for the score 
 			-->
