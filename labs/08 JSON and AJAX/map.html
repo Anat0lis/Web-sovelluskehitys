@@ -10,6 +10,18 @@
 		map.onmousemove = showCoords;
 		var mydiv = document.getElementById("mydiv");
 		mydiv.onclick = addtext;
+		var ul = document.createElement("ul");
+		ul.id = "aList";
+		document.body.appendChild(ul);
+		for (let i = 0; i < 3; i++) {
+			let li = document.createElement("li");
+			li.id = ("li"+i);
+            ul.appendChild(li);
+        }
+		let items = document.getElementsByTagName("li");
+		items[0].innerHTML = 'This is a treasure map';
+		items[1].innerHTML = 'You can use this map only on your own';
+		items[2].innerHTML = 'Do not show this to anybody';
 	}
 	
 	function showCoords(eventObj) {

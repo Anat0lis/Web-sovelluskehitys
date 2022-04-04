@@ -7,13 +7,18 @@ function calculate() {
 	'use strict';
 	
 	// For storing the order total:
-	var total;
+	let total;
     
     // Get references to the form values:
-    var quantity = document.getElementById('quantity').value;
-    var price = document.getElementById('price').value;
-    var tax = document.getElementById('tax').value;
-    var discount = document.getElementById('discount').value;
+    let quantity = parseInt(document.getElementById('quantity').value);
+    let price = parseFloat(document.getElementById('price').value);
+    let tax = parseFloat(document.getElementById('tax').value);
+    let discount = parseFloat(document.getElementById('discount').value);
+		let shipping = parseInt(document.getElementById('shipping').value)
+
+		if(quantity>=100){
+			discount *=2;
+		}
 
 	// Add validation here later!
 	
@@ -32,6 +37,10 @@ function calculate() {
 	// Factor in the discount:
 	total = total - discount;
 	console.log("total after discount: " + total);
+
+	// Factor in the shipping:
+	total = total + shipping;
+	console.log("total after shipping: " + total);
 
 	// Format the total to two decimal places:
 	total = total.toFixed(2);

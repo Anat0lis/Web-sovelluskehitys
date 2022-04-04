@@ -32,11 +32,26 @@ function addTask() {
         output.innerHTML = message;
         
     } // End of task.value IF.
-
+    console.log(tasks);
     // Return false to prevent submission:
     return false;
     
 } // End of addTask() function.
+
+// Function called when the button is pressed
+// Function deletes duplicates from the list
+function removeDuplicates(){
+    let tasks_1 = Array.from(new Set(tasks));
+    message = '<h2>To-Do</h2><ol>';
+    for (var i = 0, count = tasks_1.length; i < count; i++) {
+        message += '<li>' + tasks_1[i] + '</li>';
+    }
+    message += '</ol>';
+    console.log(tasks_1);
+    output.innerHTML = message;
+
+    return false;
+}
 
 // Initial setup:
 function init() {
