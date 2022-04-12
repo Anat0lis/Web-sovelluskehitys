@@ -16,7 +16,7 @@ function Coffee(roast, ounces) {
 		} else if (this.ounces === 16) {
 			return "large";
 		}
-	};
+	}
 	this.order = function() {
 		var msg;
 		switch (this.getSize()) {
@@ -30,17 +30,81 @@ function Coffee(roast, ounces) {
 				break;
 		}
 		return msg;
-	};
+	}
+  this.sip = function(){
+    console.log("Hmm, tasty")
+  }
+}
+
+function Tea(type, ounces){
+
+  this.ounces = ounces;
+  this.type = type;
+  let steepTime = 0;
+  this.getSteepTime = function(){
+    switch (this.type){
+      case "Black": steepTime = "5 min";
+      break;
+      case "White": steepTime = "3 min";
+      break;
+      case "Green": steepTime = "4 min";
+      break;
+      default:
+        steepTime = 0;
+        break;
+
+    }
+    return steepTime;
+  }
+  this.getSize = function() {
+    if (this.ounces === 8) {
+      return "small";
+    } else if (this.ounces === 12) {
+      return "medium";
+    } else if (this.ounces === 16) {
+      return "large";
+    }
+  }
+  this.order = function(){
+    var msg;
+    switch (this.getSize()) {
+      case "small":
+      case "medium":
+      case "large":
+        if( this.getSteepTime()===0)
+          msg = "We don't have " + this.type + " tea";
+        else
+        msg = "You've ordered a " + this.getSize() + " " + this.type + " tea. Steep time is " + this.getSteepTime();
+        break;
+      default:
+        msg = "We don't have a " + this.type + " tee in that size!";
+        break;
+    }
+    return msg;
+  }
+  this.sip = function(){
+    console.log("Hmm, tasty")
+  }
 }
 
 var coffee = new Coffee("House Blend", 12);
 console.log(coffee.order());
-
+coffee.sip();
 var darkRoast = new Coffee("Dark Roast", 16);
 console.log(darkRoast.order());
-
 var specialBlend = new Coffee("Special Blend", 200);
 console.log(specialBlend.order());
+var tea = new Tea("Black", 8);
+console.log(tea.order());
+var green = new Tea("Green", 8);
+console.log(green.order());
+var white = new Tea("White", 8);
+console.log(white.order());
+white.sip();
+var largeWhite = new Tea("White", 200);
+console.log(largeWhite.order());
+var yellow = new Tea("Yellow", 8);
+console.log(yellow.order());
 
 </script>
 </head>

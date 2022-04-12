@@ -34,18 +34,41 @@ window.onload = function() {
 	var count = 0; 
 	var message = "You clicked me ";
 	var div = document.getElementById("message");
-
+	var div_1 = document.getElementById("playback-speed");
+	var speed = 0;
+	var plus = document.getElementById("plus");
+	var minus = document.getElementById("minus");
+	var zero =  document.getElementById("zero");
 	var button = document.getElementById("clickme");
+	function updateSpeed(speed){
+		div_1.innerHTML = "Speed " + speed;
+	}
 	button.onclick = function() {
 		count++;
 		div.innerHTML = message + count + " times!";
 	};
+	plus.onclick = function(){
+		speed++;
+		updateSpeed(speed);
+	}
+	minus.onclick = function(){
+		speed--;
+		updateSpeed(speed);
+	}
+	zero.onclick = function(){
+		speed=0;
+		updateSpeed(speed);
+	}
 };
 
 </script> 
 </head> 
 <body>
 	<button id="clickme">Click me!</button>
+	<button id="plus">+</button>
+	<button id="zero">0</button>
+	<button id="minus">-</button>
+	<div id="playback-speed"></div>
 	<div id="message"></div>
 </body>
 </html>
