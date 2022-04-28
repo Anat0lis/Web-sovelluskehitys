@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vue js tehtävä 1_3</title>
+<style> 
+	body, button { margin: 10px; } 
+	div { padding: 10px; }
+</style>
+</head> 
+<body>
+<div id="app3">
+	<button id="clickme" @click="clicked">Click me!</button>
+	<button id="plus" @click="plus">+</button>
+	<button id="zero" @click="reset">0</button>
+	<button id="minus" @click="minus">-</button>
+	<div id="playback-speed">{{speed}}</div>
+	<div id="message" v-if="count>0">{{message}} {{count}} times</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="vue1_3.js"></script>
+</div>
+</body>
+</html>
+

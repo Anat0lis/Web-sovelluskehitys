@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue js tehtävä 1_1</title>
+</head>
+<body>
+
+<div id="app1">
+    <p>{{ title }}</p>
+    <label for="change">Kirjoita jotain</label>
+    <input
+            id="change"
+            type="text"
+            placeholder="text"
+            v-model="change"
+            @change="submit"
+    >
+    <p class="length">{{counter}}</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="vue1_1-2_5.js"></script>
+</body>
+</html>
